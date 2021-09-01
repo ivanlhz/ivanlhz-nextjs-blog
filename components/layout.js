@@ -3,13 +3,21 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import {Container, Heading} from '@chakra-ui/react'
 
 const name = 'Iván López Hdez'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'ivanlhz site blog'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <Container
+      display="block"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      maxW={["sm", "2xl"]}
+      marginTop="20"
+    >
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -36,7 +44,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <Heading>{name}</Heading>
           </>
         ) : (
           <>
@@ -68,6 +76,6 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-    </div>
+    </Container>
   )
 }
