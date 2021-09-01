@@ -3,8 +3,6 @@ import {Heading, Text, Box, Link} from '@chakra-ui/react'
 import Layout, { siteTitle } from '../components/layout'
 import A from '../components/a'
 import { getSortedPostsData } from '../lib/posts'
-import Date from '../components/date'
-import ArticleItem from '../components/articleItem'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -35,12 +33,6 @@ export default function Home({ allPostsData }) {
             isExternal
           >Linkedin</Link>
         </Text>
-      </Box>
-      <Box marginTop='10'>
-        <Heading>Articles</Heading>
-          {allPostsData.map((data) => (
-            <ArticleItem {...data} />
-          ))}
       </Box>
     </Layout>
   )
